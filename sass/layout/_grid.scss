@@ -1,0 +1,34 @@
+.row {
+	max-width: $total-width;
+	margin: 0 auto;
+	&:not(:last-child) {
+		margin-bottom: $ver-spacing;
+	}
+	[class^="col-"] {
+		float: left;
+		&:not(:last-child) {
+			margin-right: $hor-spacing;
+		}
+	}
+	.col-1-of-2 {
+		width: calc((100% - #{$hor-spacing}) / 2);
+	}
+	.col-1-of-3 {
+		width: calc((100% - 2 * #{$hor-spacing}) / 3);
+	}
+	.col-1-of-4 {
+		width: calc((100% - 3 * #{$hor-spacing}) / 4);
+	}
+	.col-2-of-3 {
+		width: calc((100% - #{$hor-spacing}) * (2 / 3));
+	}
+	.col-2-of-4 {
+		width: calc((100% - #{$hor-spacing}) / 2);
+	}
+	.col-3-of-4 {
+		width: calc((100% - #{$hor-spacing}) * (3 / 4));
+	}
+	&::after {
+		@include clear-fix;
+	}
+}

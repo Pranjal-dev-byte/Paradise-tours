@@ -1,0 +1,61 @@
+*,
+::before,
+::after {
+	font-family: 'Raleway', sans-serif;
+}
+body {
+	color: $color-white;
+	background-color: $color-black;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	padding: 3rem;
+	font-weight: 400;
+}
+.heading-primary {
+	color: $color-white;
+	text-transform: uppercase;
+	backface-visibility: hidden; /*Removes the shakiness from the animation*/
+	margin-bottom: 5rem;
+	&--main {
+		display: block;
+		letter-spacing: 4rem;
+		font-size: 6.8rem;
+		font-weight: 500;
+		animation: moveInLeft 3s forwards ease-in;
+		margin-left: 2rem;
+	}
+	&--sub {
+		margin-top: 1rem;
+		display: block;
+		font-weight: 400;
+		letter-spacing: 2rem;
+		font-size: 2.6rem;
+		animation: moveInRight 3s forwards linear;
+	}
+}
+.heading-secondary {
+	font-size: 3.2rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+	display: inline-block;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	transition: all .4s;
+	&:hover {
+		transform: skewY(1deg) skewX(10deg) scale(1.1);
+		text-shadow: .5rem 2rem 2rem rgba($color-black, 0.2);
+	}
+}
+.heading-tertiary {
+	font-weight: 700;
+	font-size: $default-font-size;
+	text-transform: uppercase;
+}
+.paragraph {
+	font-size: $default-font-size;
+	&:not(:last-child) {
+		margin-bottom: 4rem;
+	}
+}

@@ -1,0 +1,53 @@
+.story {
+	width: 75%;
+	color: $color-white;
+	margin: 0 auto;
+	background-color: rgba($color-black, .8);
+	box-shadow: 0px 2rem 3rem $color-black;
+	border-radius: $border-radius-default;
+	padding: 9rem 6rem;
+	padding-left: 9rem;
+	font-size: $default-font-size;
+	transform: skewX(-12deg);
+	& > * {
+		transform: skewX(12deg);
+	}
+	&__shape {
+		width: 17rem;
+		height: 17rem;
+		float: left;
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		shape-outside: circle(50% at 50% 50%);
+		/* The property can only be applied for a floated element with some defined dimensions(width and ht.) (radius at origin) */
+		-webkit-clip-path: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+		//margin-right: 2rem; /* Since, the element is floated. We should avoid using margin prop. on a floated element */
+		transform: translateX(-3rem) skewX(12deg);
+		position: relative;
+	}
+	&__img {
+		height: 100%;
+		transform: translateX(-4rem) scale(1.4);
+		backface-visibility: hidden;
+		transition: all .5s;
+	}
+	&__caption {
+		text-transform: uppercase;
+		font-size: 1.7rem;
+		position: absolute;
+		top: 50%;
+		left: 55%;
+		transform: translate(-50%, -50%);
+		transition: all .4s;
+		opacity: 0;
+		color: $color-white;
+	}
+	&:hover &__caption {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+	&:hover &__img {
+		transform: translateX(-4rem) scale(1);
+		filter: blur(3px) brightness(80%);
+	}
+}

@@ -1,0 +1,114 @@
+.nav {
+	&__button {
+		display: inline-block;
+		background-color: $color-white;
+		height: 8rem;
+		width: 8rem;
+		border-radius: 50%;
+		position: fixed;
+		top: 4.5rem;
+		right: 5.5rem;
+		z-index: 3;
+		box-shadow: .5rem 1rem 1.5rem $color-black;
+		cursor: pointer;
+		text-align: center;
+	}
+	&__background {
+		height: 6rem;
+		width: 6rem;
+		border-radius: 50%;
+		background-image: radial-gradient($color-primary-cyan, $color-primary-dark);
+		position: fixed;
+		top: 5.5rem;
+		right: 6.5rem;
+		z-index: 1;
+		transition: transform .4s ease-in;
+	}
+	&__container {
+		height: 100vh;
+		z-index: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 0;
+		opacity: 0;
+		transition: all .4s ease-out;
+	}
+	&__list {
+		@include pos-center;
+		transform: translate(-50%, -70%);
+		list-style-type: none;
+	}
+	&__item {
+		font-size: 2.5rem;
+		text-align: center;
+	}
+	&__link {
+		&:link,
+		&:visited {
+			display: inline-block;
+			transition: all .4s;
+			padding: .5rem 1rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			line-height: 2;
+			color: $color-white;
+			background-size: 244%;
+			background-image: linear-gradient(120deg, transparent 0%, transparent 50%, rgba($color-white, .8) 50%);
+		}
+		&:hover {
+			background-position: right;
+			color: $color-primary-cyan;
+			transform: translateX(.5rem);
+		}
+	}
+	&__checkbox:checked ~ &__background {
+		transform: scale(80);
+	}
+	&__checkbox:checked ~ &__container {
+		width: 100%;
+		opacity: 1;
+	}
+	&__ham-icon {
+		position: relative;
+		margin-top: 4rem;
+		&,
+		&::before,
+		&::after {
+			display: inline-block;
+			width: 3rem;
+			height: 2px;
+			background-color: $color-black-light;
+		}
+		&::before,
+		&::after {
+			content: " ";
+			position: absolute;
+			left: 0;
+			transition: all .4s;
+		}
+		&::before {
+			top: -.8rem;
+		}
+		&::after {
+			top: .8rem;
+		}
+	}
+	&__button:hover &__ham-icon::before {
+		top: -.9rem;
+	}
+	&__button:hover &__ham-icon::after {
+		top: .9rem;
+	}
+	&__checkbox:checked + &__button &__ham-icon {
+		background-color: transparent;
+	}
+	&__checkbox:checked + &__button &__ham-icon::before {
+		top: 0;
+		transform: rotate(135deg);
+	}
+	&__checkbox:checked + &__button &__ham-icon::after {
+		top: 0;
+		transform: rotate(-135deg);
+	}
+}
