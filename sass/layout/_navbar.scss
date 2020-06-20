@@ -12,6 +12,16 @@
 		box-shadow: .5rem 1rem 1.5rem $color-black;
 		cursor: pointer;
 		text-align: center;
+
+		@include respond(tab-port) {
+			top: 2.5rem;
+			right: 2.5rem;
+		}
+
+		@include respond(tab-port) {
+			top: 1.5rem;
+			right: 2.5rem;
+		}
 	}
 	&__background {
 		height: 6rem;
@@ -23,6 +33,16 @@
 		right: 6.5rem;
 		z-index: 1;
 		transition: transform .4s ease-in;
+
+		@include respond(tab-port) {
+			top: 2.5rem;
+			right: 4.5rem;
+		}
+
+		@include respond(tab-port) {
+			top: 2.5rem;
+			right: 2.5rem;
+		}
 	}
 	&__container {
 		height: 100vh;

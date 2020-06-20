@@ -4,11 +4,14 @@
 	"description": "Landing page for paradise tours",
 	"main": "index.js",
 	"scripts": {
-		"compiler:sass": "node-sass sass/main.scss css/styles.css -w"
+		"compiler": "node-sass sass/main.scss css/styles.css -w"
 	},
 	"author": "pranjal misra",
 	"license": "ISC",
 	"devDependencies": {
 		"node-sass": "^4.14.1"
+	},
+	"dependencies": {
+		"typescript": "^3.9.5"
 	}
 }

@@ -8,7 +8,6 @@ body {
 	background-color: $color-black;
 	font-size: 1.6rem;
 	line-height: 1.5;
-	padding: 3rem;
 	font-weight: 400;
 }
 .heading-primary {
@@ -23,6 +22,10 @@ body {
 		font-weight: 500;
 		animation: moveInLeft 3s forwards ease-in;
 		margin-left: 2rem;
+		@include respond(phone) {
+			letter-spacing: 1rem;
+			font-style: 4.5rem;
+		}
 	}
 	&--sub {
 		margin-top: 1rem;
@@ -31,13 +34,22 @@ body {
 		letter-spacing: 2rem;
 		font-size: 2.6rem;
 		animation: moveInRight 3s forwards linear;
+		@include respond(phone) {
+			letter-spacing: 1rem;
+			font-style: 1.2rem;
+		}
 	}
 }
 .heading-secondary {
 	font-size: 3.2rem;
 	text-transform: uppercase;
+	backface-visibility: hidden;
 	font-weight: 600;
-	background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+	background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #00dbde, #fc00ff);
+	background-size: 400%;
+	background-position: 400%;
+	animation: animated-gradient 5s linear infinite;
 	display: inline-block;
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -46,6 +58,12 @@ body {
 	&:hover {
 		transform: skewY(1deg) skewX(10deg) scale(1.1);
 		text-shadow: .5rem 2rem 2rem rgba($color-black, 0.2);
+	}
+	@include respond(tab-port) {
+		font-size: 3rem;
+	}
+	@include respond(phone) {
+		font-size: 2.5rem;
 	}
 }
 .heading-tertiary {
