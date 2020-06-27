@@ -45,6 +45,13 @@
 		&::after {
 			background-color: $color-primary-cyan;
 		}
+		@include respond(tab-port) {
+			width: 25rem;
+		}
+		@include respond(phone) {
+			width: 20rem;
+			padding: 1rem;
+		}
 	}
 	&::after {
 		content: "";

@@ -3,6 +3,9 @@
 }
 .u-margin-big {
 	margin-bottom: 10rem !important;
+	@include respond(tab-port) {
+		margin-bottom: 5rem !important;
+	}
 }
 .u-margin-huge {
 	margin-bottom: 12rem !important;
@@ -12,12 +15,21 @@
 }
 .u-margin-medium {
 	margin-bottom: 4rem !important;
+	@include respond(phone) {
+		margin-bottom: 2rem !important;
+	}
 }
 .u-margin-top {
 	margin-top: 15rem !important;
+	@include respond(tab-port) {
+		margin-top: 8rem !important;
+	}
 }
 .u-margin-top-small {
 	margin-top: 6rem !important;
+	@include respond(tab-port) {
+		margin-top: 2rem !important;
+	}
 }
 .u-hidden {
 	display: none !important;
