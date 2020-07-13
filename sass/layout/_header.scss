@@ -1,12 +1,24 @@
 .header {
 	position: relative;
 	background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.5), rgba($color-primary-dark, 0.5)),
-		url(../img/hero.jpg);
-	height: 95vh;
+		url(../img/hero-small.jpg);
+	height: 85vh;
 	background-size: cover;
 	background-position: top;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	@supports (clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	}
+	@media (min-resolution: 1.5dppx) and (min-width: 37.5em),
+		(-webkit-min-device-pixel-ratio: 1.5) and (min-width: 37.5em),
+		(min-width: 112.5em) {
+		background-image: linear-gradient(
+				to right bottom,
+				rgba($color-primary-light, 0.5),
+				rgba($color-primary-dark, 0.5)
+			),
+			url(../img/hero.jpg);
+	}
 	@include respond(phone) {
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);

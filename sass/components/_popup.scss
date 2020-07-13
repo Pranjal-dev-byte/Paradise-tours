@@ -12,6 +12,10 @@
 		height: 100%;
 		width: 100%;
 	}
+	@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+	}
 	&__content {
 		@include pos-center;
 		transform: translate(-50%, -50%);
@@ -84,9 +88,6 @@
 		border: 2px solid $color-blue-dark;
 		text-align: center;
 		cursor: pointer;
-		line-height: 1.2;
-		@include respond(tab-land) {
-			line-height: 1.4;
-		}
+		line-height: 1.4;
 	}
 }

@@ -64,11 +64,24 @@
                     </div>
                     <a href="#" class="btn-text">Learn more &rarr;</a>
                 </div>
+                <!-- TODO -->
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                        <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                             sizes="(max-width:56.25em) 16vw, (max-width:37.5em) 30vw, 18.75em"
+                             alt="photo-1" 
+                             class="composition__photo composition__photo--p1"
+                             src="img/nat-1-large.jpg">
+                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                             sizes="(max-width:56.25em) 16vw, (max-width:37.5em) 30vw, 18.75em" 
+                             alt="photo-2"
+                             class="composition__photo composition__photo--p2" 
+                             src="img/nat-2-large.jpg">
+                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                             sizes="(max-width:56.25em) 16vw, (max-width:37.5em) 30vw, 18.75em" 
+                             alt="photo-3"
+                             class="composition__photo composition__photo--p3" 
+                             src="img/nat-3-large.jpg">
                     </div>
                 </div>
             </div>
@@ -153,7 +166,7 @@
                                         $297
                                     </p>
                                 </div>
-                                <a href="#" class="btn btn-white">book now</a>
+                                <a href="#" class="btn btn-white btn-popup" id="btn-popup">book now</a>
                             </div>
                         </div>
                     </div>    
@@ -189,7 +202,7 @@
                                         $697
                                     </p>
                                 </div>
-                                <a href="#" class="btn btn-white">book now</a>
+                                <a href="#" class="btn btn-white btn-popup" id="btn-popup">book now</a>
                             </div>
                         </div>
                     </div>
@@ -225,7 +238,7 @@
                                         $897
                                     </p>
                                 </div>
-                                <a href="#" class="btn btn-white">book now</a>
+                                <a href="#" class="btn btn-white btn-popup">book now</a>
                             </div>
                         </div>
                     </div>
@@ -288,7 +301,7 @@
             
             </div>
                 <div class="u-center-class u-margin-top">
-                    <a href="#" class="btn-text" id="btn-popup">Some great stories &rarr;</a>
+                    <a href="#" class="btn-text">Some great stories &rarr;</a>
                 </div>
         </section>
         <section class="section-book">
