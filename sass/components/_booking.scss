@@ -22,6 +22,7 @@
 	}
 }
 .form {
+	position: relative;
 	&__group:not(:last-child) {
 		margin-bottom: 3rem;
 	}
@@ -48,8 +49,18 @@
 		}
 	}
 	&__label {
-		padding: 0rem 2rem .5rem 2rem;
-		font-size: 1.5rem;
+		position: absolute;
+		border-radius: 4px;
+		color: $color-primary-dark;
+		font-weight: 600;
+		font-size: $default-font-size;
+		display: block;
+		transform: translate(10%, 50%);
+		background-color: whitesmoke;
+		padding: 0px 6px 4px 8px;
+		&--animate {
+			animation: input-animation .2s linear forwards;
+		}
 	}
 	&::-webkit-input-placeholder {
 		//For the input placeholder
