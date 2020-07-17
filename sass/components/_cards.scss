@@ -125,8 +125,9 @@
 		font-size: 6rem;
 		font-weight: 200;
 	}
-
-	@include respond(tab-port) {
+	// Todo:Button design is broken for tab-land no hover screens
+	// @include respond(tab-port) {
+	@media only screen and (max-width: 56.25em), only screen and (hover: none) {
 		// functionality
 		height: auto;
 		background-color: $color-white;
